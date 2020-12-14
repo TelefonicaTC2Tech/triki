@@ -1,0 +1,4 @@
+db/
+query_results/
+*.log
+*.json

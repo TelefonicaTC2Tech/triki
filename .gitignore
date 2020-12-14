@@ -1,0 +1,6 @@
+data/
+profile/
+*.log
+*.zip
+.idea
+data*

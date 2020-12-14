@@ -1,0 +1,25 @@
+sites:
+  - url: https://www.elevenpaths.com
+    flow_type: browse
+    flow:
+        - {element: null, action: "sleep", value: 30}
+  - url: https://www.elevenpaths.com
+    flow_type: accept
+    flow:
+      - {element: null, action: "delay", value: 5}
+      - {element: null, action: "screenshot", filename: "site"}
+      - {element: {by: "id", value: "onetrust-banner-sdk"}, action: "screenshot", filename: "message"}
+      - {element: {by: "id", value: "onetrust-accept-btn-handler"}, action: "delay", value: 5}
+      - {element: {by: "id", value: "onetrust-accept-btn-handler"}, action: "click"}
+      - {element: null, action: "sleep", value: 30}
+  - url: https://www.elevenpaths.com
+    flow_type: reject
+    flow:
+      - {element: null, action: "delay", value: 5}
+      - {element: {by: "id", value: "onetrust-pc-btn-handler"}, action: "delay", value: 5}
+      - {element: {by: "id", value: "onetrust-pc-btn-handler"}, action: "click"}
+      - {element: null, action: "sleep", value: 5}
+      - {element: {by: "id", value: "onetrust-banner-sdk"}, action: "screenshot", filename: "configuration"}
+      - {element: {by: "class name", value: "ot-pc-refuse-all-handler"}, action: "delay", value: 5}
+      - {element: {by: "class name", value: "ot-pc-refuse-all-handler"}, action: "click"}
+      - {element: null, action: "sleep", value: 30}
